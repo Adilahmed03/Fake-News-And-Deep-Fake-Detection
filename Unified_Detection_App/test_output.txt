@@ -1,0 +1,22 @@
+
+--- Loading Model ---
+Vocab Size: 235559
+Classifier Coefficients Shape: (1, 235559)
+Classifier Intercept: [0.1975658]
+
+--- Testing Inputs ---
+
+Test [Real]: The President announced a new infrastructure bill allocating 1.2 trillion dollars to bridge repairs across all 50 states.
+Prediction Probabilities: {'fake': np.float64(35.33), 'real': np.float64(64.67)}
+Transformed Vector NNZ (non-zero TF-IDF terms): 11
+Top 3 non-zero expected frequencies: [0.25671626 0.38314005 0.35906129]
+
+Test [Fake]: Aliens landed in Times Square yesterday and abducted the mayor, promising to return him if we surrender our gold.
+Prediction Probabilities: {'fake': np.float64(39.23), 'real': np.float64(60.77)}
+Transformed Vector NNZ (non-zero TF-IDF terms): 10
+Top 3 non-zero expected frequencies: [0.27635729 0.31212283 0.38002395]
+
+Test [Random]: Banana shoe fast run blue table orange quickly cloud keyboard.
+Prediction Probabilities: {'fake': np.float64(50.97), 'real': np.float64(49.03)}
+Transformed Vector NNZ (non-zero TF-IDF terms): 9
+Top 3 non-zero expected frequencies: [0.37081241 0.32811471 0.37081241]

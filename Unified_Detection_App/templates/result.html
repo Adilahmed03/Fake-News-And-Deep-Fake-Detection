@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results - AI Detection Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <canvas id="particles-canvas"></canvas>
+    </div>
+
+    <!-- Main Content -->
+    <div class="page-wrapper">
+        <div class="container">
+            <div class="result-container">
+                <!-- Result Card -->
+                <div class="glass-card">
+                    <!-- Result Icon -->
+                    <div id="result-icon" class="result-icon">✓</div>
+
+                    <!-- Result Label -->
+                    <h2 id="result-label" class="result-label">Analyzing...</h2>
+
+                    <!-- Result Description -->
+                    <p id="result-description" class="text-muted" style="font-size: 1.125rem;"></p>
+
+                    <!-- Confidence Meter -->
+                    <div class="confidence-meter">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Confidence Level</h3>
+                        <div class="confidence-bar">
+                            <div id="confidence-fill" class="confidence-fill" style="width: 0%;">
+                                <span id="confidence-text">0%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div style="display: flex; gap: 1rem; margin-top: 2rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="javascript:history.back()" class="btn btn-primary">
+                            🔄 Analyze Another
+                        </a>
+                        <a href="/" class="btn btn-secondary">
+                            🏠 Back to Home
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Additional Details -->
+                <div id="details-container"></div>
+
+                <!-- Disclaimer -->
+                <div class="glass-card mt-3" style="background: rgba(30, 41, 59, 0.4);">
+                    <p class="text-muted text-center" style="margin: 0; font-size: 0.875rem;">
+                        ⚠️ This analysis is provided for informational purposes only. Always verify information from
+                        multiple trusted sources.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
