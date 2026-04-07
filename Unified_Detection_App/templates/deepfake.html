@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepfake Detection - AI Detection Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <canvas id="particles-canvas"></canvas>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p id="loading-text" class="mt-3" style="font-size: 1.25rem;">Uploading and analyzing video...</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="page-wrapper">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- Header -->
+                <div class="text-center mb-4">
+                    <h1>🎭 Deepfake Detection</h1>
+                    <p class="text-muted">Upload a video file to analyze for deepfake manipulation</p>
+                </div>
+
+                <!-- Form -->
+                <div class="glass-card">
+                    <form id="deepfake-form">
+                        <div class="form-group">
+                            <label class="form-label">Video File</label>
+
+                            <!-- File Upload Area -->
+                            <div id="upload-area" class="file-upload-area">
+                                <div class="file-upload-icon">📁</div>
+                                <h3 style="margin-bottom: 0.5rem;">Drag & Drop Video Here</h3>
+                                <p class="text-muted">or click to browse</p>
+                                <p class="text-muted" style="font-size: 0.875rem; margin-top: 1rem;">
+                                    Supported formats: MP4, AVI, MOV, MKV, WEBM<br>
+                                    Maximum size: 100MB
+                                </p>
+                            </div>
+
+                            <input type="file" id="video-file" name="video"
+                                accept="video/mp4,video/avi,video/mov,video/x-matroska,video/webm"
+                                style="display: none;">
+
+                            <div id="file-name" class="mt-2 text-center"
+                                style="display: none; color: var(--primary); font-weight: 600;"></div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                            <button type="submit" class="btn btn-primary" style="flex: 1;">
+                                🔍 Analyze Video
+                            </button>
+                            <a href="/" class="btn btn-secondary">
+                                ← Back
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Info Card -->
+                <div class="glass-card mt-3">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">ℹ️ How it works</h3>
+                    <p class="text-muted" style="margin-bottom: 0.5rem;">
+                        Our deepfake detection system uses a combination of ResNext CNN for feature extraction and LSTM
+                        networks for temporal analysis across video frames.
+                    </p>
+                    <p class="text-muted" style="margin-bottom: 0;">
+                        <strong>Model:</strong> ResNext + LSTM<br>
+                        <strong>Accuracy:</strong> Up to 93.6% (100 frames)<br>
+                        <strong>Processing:</strong> Analyzes 20 frames from your video
+                    </p>
+                </div>
+
+                <!-- Warning Card -->
+                <div class="glass-card mt-3" style="border-color: rgba(245, 158, 11, 0.3);">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">⚠️ Note</h3>
+                    <p class="text-muted" style="margin-bottom: 0;">
+                        The current implementation uses a placeholder model for demonstration. For production use,
+                        integrate the full ResNext+LSTM model from the Deepfake_detection_using_deep_learning project.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
